@@ -1,0 +1,259 @@
+VERSION ""
+
+NS_ :
+	BA_
+	BA_DEF_
+	BA_DEF_DEF_
+	BA_DEF_DEF_REL_
+	BA_DEF_REL_
+	BA_DEF_SGTYPE_
+	BA_REL_
+	BA_SGTYPE_
+	BO_TX_BU_
+	BU_BO_REL_
+	BU_EV_REL_
+	BU_SG_REL_
+	CAT_
+	CAT_DEF_
+	CM_
+	ENVVAR_DATA_
+	EV_DATA_
+	FILTER
+	NS_DESC_
+	SGTYPE_
+	SGTYPE_VAL_
+	SG_MUL_VAL_
+	SIGTYPE_VALTYPE_
+	SIG_GROUP_
+	SIG_TYPE_REF_
+	SIG_VALTYPE_
+	VAL_
+	VAL_TABLE_
+
+BS_:
+
+BU_: BATTERY MOTOR DISPLAY
+
+BA_DEF_ SG_ "FieldType" STRING ;
+
+BO_ 28 MOTOR_UPTIME: 8 MOTOR
+ SG_ timestamp : 0|32@0+ (0.001,0) [0|0] "s" DISPLAY,MOTOR
+
+BO_ 55 DISPLAY_STATUS: 3 DISPLAY
+ SG_ light : 8|8@1+ (1,0) [0|0] "" DISPLAY
+ SG_ walk : 16|8@1+ (1,0) [0|0] "" DISPLAY
+
+BA_ "FieldType" SG_ 55 light "light";
+VAL_ 55 light 128 "on" 0 "off" ;
+
+BA_ "FieldType" SG_ 55 walk "walk";
+VAL_ 55 walk 1 "on" 0 "off" ;
+
+BO_ 59 SUPPORT_STATUS: 4 MOTOR
+    SG_ level : 0|8@1+ (1,0) [0|0] "" MOTOR
+    SG_ boot : 8|8@1+ (1,0) [0|0] "" MOTOR
+
+BA_ "FieldType" SG_ 59 level "level";
+VAL_ 59 level 9 "off" 1 "eco" 2 "tour" 3 "sport" 4 "turbo" ;
+
+BA_ "FieldType" SG_ 59 boot "boot";
+VAL_ 59 boot 255 "booting" 0 "normal" ;
+
+BO_ 60 DISPLAY_STATUS2: 3 DISPLAY
+ SG_ boot : 7|8@0+ (1,0) [0|0] "" DISPLAY
+ SG_ light : 15|8@0+ (1,0) [0|0] "" DISPLAY
+ SG_ walk : 23|8@0+ (1,0) [0|0] "" DISPLAY
+
+
+BA_ "FieldType" SG_ 60 boot "boot";
+VAL_ 60 boot 0 "booting" 1 "normal" ;
+
+BA_ "FieldType" SG_ 60 light "light";
+VAL_ 60 light 1 "on" 2 "off" ;
+
+BA_ "FieldType" SG_ 60 walk "walk";
+VAL_ 60 walk 2 "on" 1 "off" ;
+
+BO_ 72 MOTOR_TORQUE: 6 MOTOR
+ SG_ torque : 7|16@0+ (0.1,0) [0|0] "Nm" MOTOR
+ SG_ timestamp : 23|16@0+ (0.0001,0) [0|0] "s" MOTOR
+
+BO_ 74 BATTERY_BOOT_PING: 1 BATTERY
+
+BO_ 90 DISPLAY_RESET: 1 DISPLAY
+
+BO_ 140 BATTERY_PING: 1 DISPLAY
+
+BO_ 154 MOTOR_PING: 1 MOTOR
+
+BO_ 155 DISPLAY_PING: 1 DISPLAY
+
+BO_ 163 MOTOR_VERSION: 6 MOTOR
+  SG_ major_version : 7|8@0+ (1,0) [0|0] "" MOTOR
+  SG_ minor_version : 15|8@0+ (1,0) [0|0] "" MOTOR
+  SG_ patch_version : 23|8@0+ (1,0) [0|0] "" MOTOR
+  SG_ bugfix_version : 31|8@0+ (1,0) [0|0] "" MOTOR
+
+BO_ 190 DISPLAY_VERSION: 6 DISPLAY
+  SG_ major_version : 7|8@0+ (1,0) [0|0] "" DISPLAY
+  SG_ minor_version : 15|8@0+ (1,0) [0|0] "" DISPLAY
+  SG_ patch_version : 23|8@0+ (1,0) [0|0] "" DISPLAY
+  SG_ bugfix_version : 31|8@0+ (1,0) [0|0] "" DISPLAY
+
+BO_ 197 DISPLAY_SETTINGS: 3 DISPLAY
+ SG_ type : 7|8@0+ (1,0) [0|0] "" DISPLAY
+ SG_ data : 15|16@0+ (1,0) [0|0] "" DISPLAY
+
+BO_ 198 DISPLAY_SETTINGS_SETTING: 8 DISPLAY
+ SG_ minimum : 7|16@0+ (1,0) [0|0] "" DISPLAY
+ SG_ maximum : 23|16@0+ (1,0) [0|0] "" DISPLAY
+ SG_ default: 39|16@0+ (1,0) [0|0] "" DISPLAY
+ SG_ value: 54|9@16+ (1,0) [0|0] "" DISPLAY
+
+BO_ 199 BATTERY_STATUS: 8 BATTERY
+ SG_ remaining_charge: 23|16@0+ (1,0) [0|0] "Wh" BATTERY
+ SG_ full_charge: 47|8@0+ (0.1,0) [0|0] "Ah" BATTERY
+
+BO_ 208 GFORCE_INDICATOR: 8 MOTOR
+ SG_ force1: 7|16@0+ (1,0) [0|0] "m/s^2" MOTOR
+ SG_ force2: 23|16@0+ (1,0) [0|0] "m/s^2" MOTOR
+
+BO_ 209 SPEED: 2 MOTOR
+ SG_ speed: 7|16@0+ (0.1,0) [0|0] "km/h" MOTOR
+
+BO_ 210 CADENCE: 4 MOTOR
+ SG_ cadance: 15|8@0+ (1,0) [0|0] "1/min" MOTOR
+
+BO_ 211 CHAIN_TORQUE: 6 MOTOR
+ SG_ chain_torque: 7|16@0- (0.01,0) [0|0] "Nm" MOTOR
+ SG_ nominal: 23|16@0+ (0.01,0) [0|0] "Nm" MOTOR
+ SG_ rpm: 39|16@0- (1,0) [0|0] "1/min" MOTOR
+
+BO_ 212 POWER_DRAW: 4 MOTOR
+ SG_ power_draw: 7|16@0+ (0.1,0) [0|0] "W" MOTOR
+ SG_ power_draw_max: 23|16@0+ (0.1,0) [0|0] "W" MOTOR
+
+BO_ 241 BATTERY_DISCHARGE: 7 BATTERY
+ SG_ discharge: 39|8@0- (1,0) [0|100] "%" BATTERY
+ SG_ battery_empty: 55|8@0+ (1,0) [0|0] "" BATTERY
+
+BA_ "FieldType" SG_ 241 battery_empty "battery_empty";
+VAL_ 241 battery_empty 152 "normal" 216 "below 20%" 16 "boot" 154 "active or performance";
+
+BO_ 257 BATTERY_CHARGE_RAW: 8 BATTERY
+ SG_ status: 7|16@0- (1,0) [0|0] "" BATTERY
+ SG_ current: 23|16@0+ (0.001,0) [0|0] "A" BATTERY
+ SG_ power: 39|16@0+ (0.1,0) [0|0] "W" BATTERY
+ SG_ voltage: 55|16@0+ (0.001,0) [0|0] "V" BATTERY
+
+BA_ "FieldType" SG_ 257 status "status";
+VAL_ 257 status 0 "run" 65535 "charge";
+
+BO_ 273 BATTERY_CHARGE: 7 BATTERY
+ SG_ discharge_limit_indicator: 23|16@0+ (1,0) [0|0] "" BATTERY
+ SG_ full_charge: 47|8@0+ (0.1,0) [0|0] "Ah" BATTERY
+ SG_ remaining_charge: 55|8@0+ (1,0) [0|100] "%" BATTERY
+
+BO_ 289 BATTERY_VERSION: 6 BATTERY
+  SG_ major_version : 7|8@0+ (1,0) [0|0] "" BATTERY
+  SG_ minor_version : 15|8@0+ (1,0) [0|0] "" BATTERY
+  SG_ patch_version : 23|8@0+ (1,0) [0|0] "" BATTERY
+  SG_ bugfix_version : 31|8@0+ (1,0) [0|0] "" BATTERY
+
+BO_ 305 DISPLAY_OPERATION: 8 DISPLAY
+ SG_ operation : 15|8@0+ (1,0) [0|0] "" DISPLAY
+ SG_ button : 63|8@0+ (1,0) [0|0] "" DISPLAY
+
+BA_ "FieldType" SG_ 305 operation "operation";
+VAL_ 305 operation 0 "boot" 2 "settings" 5 "entering sw version";
+
+BA_ "FieldType" SG_ 305 button "button";
+VAL_ 305 button 0 "plus" 1 "info" 2 "minus" 3 "walk" 8 "intuvia reset" 9 "info" 10 "light" 11 "intuvia or battery on/off";
+
+BO_ 368 BATTERY_TEMPERATURE: 8 BATTERY
+ SG_ temperature: 15|16@0+ (0.01,0) [0|0] "K" BATTERY
+
+BO_ 514 RANGE_INFO: 8 DISPLAY
+ SG_ total_distance: 7|32@0+ (1,0) [0|0] "m" DISPLAY
+ SG_ remaining_range: 39|32@0+ (1,0) [0|0] "m" DISPLAY
+
+BO_ 515 SUPPORT_INFO: 8 MOTOR 
+ SG_ total_operation_time: 7|32@0+ (1,0) [0|0] "s" MOTOR
+ SG_ remaing_charge: 39|8@0+ (1,0) [0|100] "%" MOTOR
+ SG_ speed_and_support: 47|16@0+ (1,0) [0|0] "" MOTOR
+ SG_ support_off_ind: 63|8@0+ (1,0) [0|0] "" MOTOR
+
+BA_ "FieldType" SG_ 515 support_off_ind "support_off_ind";
+VAL_ 515 support_off_ind 0 "normal" 80 "support of bat empty";
+
+BO_ 517 GEAR_SHIFT_INIDICATOR: 8 MOTOR
+ SG_ recommandation: 15|8@0+ (1,0) [0|0] "" MOTOR
+
+BA_ "FieldType" SG_ 517 recommendation "recommendation";
+VAL_ 517 recommendation 0 "none" 156 "lower gear" 100 "higher gear";
+
+BO_ 528 DATETIME: 6 MOTOR
+ SG_ year:7|8@0- (1,0) [0|0] "y" MOTOR
+ SG_ month:15|8@0- (1,0) [0|0] "mon" MOTOR
+ SG_ day:23|8@0- (1,0) [0|0] "d" MOTOR
+ SG_ hour:31|8@0- (1,0) [0|0] "h" MOTOR
+ SG_ minute:39|8@0- (1,0) [0|0] "min" MOTOR
+ SG_ second:47|8@0- (1,0) [0|0] "s" MOTOR
+
+BO_ 529 ALLZERO: 8 MOTOR
+ SG_ allzeros:7|64@0- (1,0) [0|0] "" MOTOR
+
+BO_ 544 SPEED_SENSOR_INFO: 8 MOTOR
+
+BO_ 545 OVER_5000: 8 MOTOR
+
+BO_ 588 BATTERY_INFO: 8 BATTERY
+ SG_ temperature: 7|16@0+ (0.01,0) [0|0] "K" BATTERY
+ SG_ battery_voltage: 23|16@0+ (0.01,0) [0|0] "K" BATTERY
+
+BO_ 849 BATTERY_STAT1: 8 BATTERY
+
+BO_ 850 BATTERY_STAT2: 8 BATTERY
+ SG_ frame_type M : 7|4@0+ (1,0) [0|0] "" BATTERY
+ SG_ single_frame_length m0 : 3|4@0+ (1,0) [0|0] "" BATTERY
+ SG_ single_frame_header_length m0M : 15|8@0+ (1,0) [0|0] "" BATTERY
+ SG_ data_type1 m1: 39|8@0+ (1,0) [0|0] "" BATTERY
+ SG_ data_type2 m2: 47|8@0+ (1,0) [0|0] "" BATTERY
+ SG_ data_length1 m1: 47|8@0+ (1,0) [0|0] "" BATTERY
+ SG_ data_length2 m2: 55|8@0+ (1,0) [0|0] "" BATTERY
+ SG_ multi_frame_length m1 : 15|8@0+ (1,0) [0|0] "" BATTERY
+ SG_ multi_frame_header_length m1M : 23|8@0+ (1,0) [0|0] "" BATTERY
+ SG_ data_type3 m1: 47|8@0+ (1,0) [0|0] "" BATTERY
+ SG_ data_type4 m2: 55|8@0+ (1,0) [0|0] "" BATTERY
+ SG_ data_length3 m1: 55|8@0+ (1,0) [0|0] "" BATTERY
+ SG_ data_length4 m2: 63|8@0+ (1,0) [0|0] "" BATTERY
+ SG_ additional_frame_id m2 : 3|4@0+ (1,0) [0|0] "" BATTERY
+ SG_ additional_frame_data m2 : 23|48@0+ (1,0) [0|0] "" BATTERY
+
+VAL_ 850 frame_type 0 "single" 1 "header" 2 "follow up";
+VAL_ 850 data_type1 0 "x";
+
+SG_MUL_VAL_ 850 single_frame_length frame_type 0-0;
+SG_MUL_VAL_ 850 single_frame_header_length frame_type 0-0;
+SG_MUL_VAL_ 850 data_type1 single_frame_header_length 1-1;
+SG_MUL_VAL_ 850 data_type2 single_frame_header_length 2-2;
+SG_MUL_VAL_ 850 data_length1 single_frame_header_length 1-1;
+SG_MUL_VAL_ 850 data_length2 single_frame_header_length 2-2;
+
+SG_MUL_VAL_ 850 multi_frame_header_length frame_type 1-1;
+SG_MUL_VAL_ 850 multi_frame_length frame_type 1-1;
+SG_MUL_VAL_ 850 data_type3 multi_frame_header_length 1-1;
+SG_MUL_VAL_ 850 data_type4 multi_frame_header_length 2-2;
+SG_MUL_VAL_ 850 data_length3 multi_frame_header_length 1-1;
+SG_MUL_VAL_ 850 data_length4 multi_frame_header_length 2-2;
+
+SG_MUL_VAL_ 850 additional_frame_id frame_type 2-2;
+SG_MUL_VAL_ 850 additional_frame_data frame_type 2-2;
+
+
+VAL_ 850 data_type1 0 "state of chage histogram" 1 "state of chage histogram" 2 "state of chage histogram" 3 "state of chage histogram" 4 "temperature 1 histogram" 5 "temperature 3 histogram" 6 "battery power output histogram" 7 "total time battery charging" 8 "total time battery discharging" 9 "battery charging cycles?" 10 "total power cycles?" 11 "lifetime charge internal" 12 "lifetime charge external" 13 "nominal battery capacity" 14 "remaining actual battery capacity" 15 "total distance" 70 "power pack hardware version" 72 "meaning unclear" 77 "meaning unclear" 94 "max. temperature power pack" 95 "max. temperature 1 over lifetime" 96 "min. temperature of power pack over lifetime" 108 "meaning unclear" 109 "meaning unclear" 126 "min. temperature 1 over lifetime" 144 "max. temperature 2 over lifetime" 160 "meaning unclear" 187 "meaning unclear" 188 "meaning unclear" 189 "max. temperature 1 since powerup" 190 "max. temperature 2 since powerup" 191 "max. temperature 3 since powerup" 192 "min. temperature 1 since powerup" 193 "min. temperature 3 since powerup" 194 "meaning unclear" 195 "meaning unclear" 196 "max. battery voltage since powerup " 197 "min. battery voltage since powerup" 198 "max. current draw over lifetime" 199 "max. charging current over lifetime" 200 "max. current draw since powerup" 201 "max. charging current since powerup";
+VAL_ 850 data_type2 0 "state of chage histogram" 1 "state of chage histogram" 2 "state of chage histogram" 3 "state of chage histogram" 4 "temperature 1 histogram" 5 "temperature 3 histogram" 6 "battery power output histogram" 7 "total time battery charging" 8 "total time battery discharging" 9 "battery charging cycles?" 10 "total power cycles?" 11 "lifetime charge internal" 12 "lifetime charge external" 13 "nominal battery capacity" 14 "remaining actual battery capacity" 15 "total distance" 70 "power pack hardware version" 72 "meaning unclear" 77 "meaning unclear" 94 "max. temperature power pack" 95 "max. temperature 1 over lifetime" 96 "min. temperature of power pack over lifetime" 108 "meaning unclear" 109 "meaning unclear" 126 "min. temperature 1 over lifetime" 144 "max. temperature 2 over lifetime" 160 "meaning unclear" 187 "meaning unclear" 188 "meaning unclear" 189 "max. temperature 1 since powerup" 190 "max. temperature 2 since powerup" 191 "max. temperature 3 since powerup" 192 "min. temperature 1 since powerup" 193 "min. temperature 3 since powerup" 194 "meaning unclear" 195 "meaning unclear" 196 "max. battery voltage since powerup " 197 "min. battery voltage since powerup" 198 "max. current draw over lifetime" 199 "max. charging current over lifetime" 200 "max. current draw since powerup" 201 "max. charging current since powerup";
+VAL_ 850 data_type3 0 "state of chage histogram" 1 "state of chage histogram" 2 "state of chage histogram" 3 "state of chage histogram" 4 "temperature 1 histogram" 5 "temperature 3 histogram" 6 "battery power output histogram" 7 "total time battery charging" 8 "total time battery discharging" 9 "battery charging cycles?" 10 "total power cycles?" 11 "lifetime charge internal" 12 "lifetime charge external" 13 "nominal battery capacity" 14 "remaining actual battery capacity" 15 "total distance" 70 "power pack hardware version" 72 "meaning unclear" 77 "meaning unclear" 94 "max. temperature power pack" 95 "max. temperature 1 over lifetime" 96 "min. temperature of power pack over lifetime" 108 "meaning unclear" 109 "meaning unclear" 126 "min. temperature 1 over lifetime" 144 "max. temperature 2 over lifetime" 160 "meaning unclear" 187 "meaning unclear" 188 "meaning unclear" 189 "max. temperature 1 since powerup" 190 "max. temperature 2 since powerup" 191 "max. temperature 3 since powerup" 192 "min. temperature 1 since powerup" 193 "min. temperature 3 since powerup" 194 "meaning unclear" 195 "meaning unclear" 196 "max. battery voltage since powerup " 197 "min. battery voltage since powerup" 198 "max. current draw over lifetime" 199 "max. charging current over lifetime" 200 "max. current draw since powerup" 201 "max. charging current since powerup";
+VAL_ 850 data_type4 0 "state of chage histogram" 1 "state of chage histogram" 2 "state of chage histogram" 3 "state of chage histogram" 4 "temperature 1 histogram" 5 "temperature 3 histogram" 6 "battery power output histogram" 7 "total time battery charging" 8 "total time battery discharging" 9 "battery charging cycles?" 10 "total power cycles?" 11 "lifetime charge internal" 12 "lifetime charge external" 13 "nominal battery capacity" 14 "remaining actual battery capacity" 15 "total distance" 70 "power pack hardware version" 72 "meaning unclear" 77 "meaning unclear" 94 "max. temperature power pack" 95 "max. temperature 1 over lifetime" 96 "min. temperature of power pack over lifetime" 108 "meaning unclear" 109 "meaning unclear" 126 "min. temperature 1 over lifetime" 144 "max. temperature 2 over lifetime" 160 "meaning unclear" 187 "meaning unclear" 188 "meaning unclear" 189 "max. temperature 1 since powerup" 190 "max. temperature 2 since powerup" 191 "max. temperature 3 since powerup" 192 "min. temperature 1 since powerup" 193 "min. temperature 3 since powerup" 194 "meaning unclear" 195 "meaning unclear" 196 "max. battery voltage since powerup " 197 "min. battery voltage since powerup" 198 "max. current draw over lifetime" 199 "max. charging current over lifetime" 200 "max. current draw since powerup" 201 "max. charging current since powerup";
+
+BO_ 851 BATTERY_STAT3: 8 BATTERY

@@ -1,0 +1,69 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "e0f904491d4ea2ec301bce174d8c02ea2bec44b6d533a13385a068584cf7b264"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.8"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "aenum": {
+            "hashes": [
+                "sha256:284ddb976413d97239a932d7e5202ba58d66e5dbd81531bf3033ebb36ec30b23",
+                "sha256:a4334cabf47c167d44ab5a6198837b80deec5d5bad1b5cf70c966c3a330260e8",
+                "sha256:d2bb6ea7586aaae889d3a5c332eafa851eeffe6e7068807c79b6c86c4326b938"
+            ],
+            "version": "==2.2.3"
+        },
+        "bitstruct": {
+            "hashes": [
+                "sha256:15e3bd0efcd872a49502ec19d511cc41eeb9941819d21e2c449d029504a5cc36"
+            ],
+            "version": "==8.10.0"
+        },
+        "cantools": {
+            "hashes": [
+                "sha256:14e79013309c7ef3dafe65f3c1ebf54c5a2aaa58dab04609f33f9691bfbd01b5",
+                "sha256:c8052196cf820d3186212c0219add72cca4984a4549061bbdc502d0775916010"
+            ],
+            "index": "pypi",
+            "version": "==34.0.0"
+        },
+        "diskcache": {
+            "hashes": [
+                "sha256:69b253a6ffe95bb4bafb483b97c24fca3c2c6c47b82e92b36486969a7e80d47d",
+                "sha256:bcee5a59f9c264e2809e58d01be6569a3bbb1e36a1e0fb83f7ef9b2075f95ce0"
+            ],
+            "version": "==4.1.0"
+        },
+        "python-can": {
+            "hashes": [
+                "sha256:5fefb5c1e7e7f07faefc02c6eac79f9b58376f007048a04d8e7f325d48ec6b2e"
+            ],
+            "version": "==3.3.2"
+        },
+        "textparser": {
+            "hashes": [
+                "sha256:f009d0f6f78aa7c1e648dca4e3961f6d67495f7f520f1a705245ffad33f4b470",
+                "sha256:f606d54cc0b30135082df2de3558915d2a78ff347efb043801bfbe173fb96e73"
+            ],
+            "version": "==0.23.0"
+        },
+        "wrapt": {
+            "hashes": [
+                "sha256:b62ffa81fb85f4332a4f609cab4ac40709470da05643a082ec1eb88e6d9b97d7"
+            ],
+            "version": "==1.12.1"
+        }
+    },
+    "develop": {}
+}
