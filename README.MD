@@ -19,7 +19,7 @@ The tooling consists of the following parts:
 3. Get some 2mmx9.5mm Pogo pins. Solder them to the board and use a lot of solder to create contact points for the pins coming from the display. 
 4. Wire everything up
 
-![Wiring](connector/Wireup_bb.jpg)
+![Wiring](connector/Wireup_bb.png)
 
 #### Links
 
