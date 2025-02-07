@@ -39,9 +39,6 @@ The tooling consists of the following parts:
 
 7. You should now see received canbus frames 
 
-#### Links
- [euroboard](https://www.amazon.de/XCSOURCE-Empf%C3%A4nger-Steuerung-Entwicklung-TE534/dp/B01IV3ZSKO/ref=sxts_sxwds-bia-wc-p13n1_0)
-
 ### Dumping frames
 
 1. Install can tool via `pipenv install` in `tracereader`
